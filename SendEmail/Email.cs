@@ -7,9 +7,9 @@ namespace SendEmail;
 
 public class Email(string provider, string username, string password)
 {
-    private string Provider { get; set; } = provider ?? throw new ArgumentNullException(nameof(provider));
-    private string Username { get; set; } = username ?? throw new ArgumentNullException(nameof(username));
-    private string Password { get; set; } = password ?? throw new ArgumentNullException(nameof(password));
+    private string Provider { get; } = provider ?? throw new ArgumentNullException(nameof(provider));
+    private string Username { get; } = username ?? throw new ArgumentNullException(nameof(username));
+    private string Password { get; } = password ?? throw new ArgumentNullException(nameof(password));
 
     public void SendEmail(List<string> emailsTo, string subject, string body, List<string> attachments)
     {
